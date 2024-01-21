@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'TBCContractica';
+    src:  url('./fonts/TBCContractica-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'TBCContractica';
+    src:  url('./fonts/TBCContractica-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'TBCContractica';
+    src:  url('./fonts/TBCContractica-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'TBCContracticaCAPS';
+    src:  url('./fonts/TBCContracticaCAPS-Bold.ttf');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #2b2b2b;
+    font-family: TBCContractica, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    transform-origin: top left;
+    width: 320px;
+}
+
+header {
+    background-color: #1a1e1f;
+    height: 69px;
+}
+
+.learn-more {
+    color: #00aef3;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    color: #f4f4f4;
+}
+
+#title {
+    height: 217px;
+    position: relative;
+}
+
+#title img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#title h1 {
+    position: absolute;
+    top: 0;
+    margin: 50px 20px;
+    color: #f4f4f4;
+    font-family: TBCContracticaCAPS, Helvetica, sans-serif;
+}
+
+#title h1 span:first-child {
+    font-size: 24px;
+    line-height: 1.6em;
+}
+
+#title h1 span:last-child {
+    font-size: 22px;
+    line-height: 1.6em;
+}
+
+#description {
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #f4f4f4;
+}
+
+#description p {
+    margin: 32px 20px;
+}
+
+#description div {
+    height: 48px;
+    margin-bottom: 33px;
+    margin: 0 20px 33px 20px;
+    display: flex;
+    align-items: center;
+}
