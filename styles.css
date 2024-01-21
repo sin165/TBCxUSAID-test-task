@@ -29,7 +29,6 @@ body {
     font-weight: 400;
     font-size: 10px;
     color: #f4f4f4;
-    transform-origin: top left;
     width: 320px;
     overflow-x: hidden;
 }
@@ -37,6 +36,21 @@ body {
 header {
     background-color: #1a1e1f;
     height: 69px;
+    position: fixed;
+    top: 0;
+    width: 320px;
+    transform-origin: top left;
+    z-index: 30;
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+header.transparent {
+    background-color: #222222f2;
+}
+
+main {
+    transform-origin: top left;
+    padding-top: 69px;
 }
 
 .learn-more {
