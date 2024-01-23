@@ -2,10 +2,13 @@ const main = document.querySelector('main')
 const header = document.querySelector('header')
 
 // scale to fit screen
-let ratio
+let ratio = 1
 const resize = () => {
-    let w = window.innerWidth < 1080 ? window.innerWidth : 1080
-    ratio = w / 320
+    if(window.innerWidth < 1080) {
+        ratio = window.innerWidth / 320
+    } else {
+        ratio = 1
+    }
     main.style.transform = 'scale(' + ratio + ')'
     header.style.transform = 'scale(' + ratio + ')'
 }

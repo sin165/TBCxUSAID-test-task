@@ -163,6 +163,8 @@ main {
     width: 16px;
     height: 13px;
     margin-right: 7px;
+    position: relative;
+    top: 2px;
 }
 
 .details a {
@@ -183,5 +185,104 @@ main {
 
     body::-webkit-scrollbar {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        height: 84px;
+    }
+
+    main {
+        padding-top: 84px;
+    }
+
+    #title {
+        height: 352px;
+    }
+
+    #title h1 {
+        width: 100%;
+        margin: 96px 0 0 0;
+    }
+
+    #title h1 span {
+        display: block;
+        width: 980px;
+        margin: 0 auto 0 auto;
+    }
+
+    #title h1 span:first-child {
+        font-size: 42px;
+        margin-bottom: 8px;
+    }
+
+    #title h1 span:last-child {
+        font-size: 34px;
+    }
+
+    #description {
+        width: 980px;
+        margin: 56px auto 43px auto;
+        font-size: 28px;
+        margin-bottom: 57px;
+    }
+
+    #description p {
+        margin: 0 0 43px 0;
+    }
+
+    #description div {
+        margin: 0;
+    }
+
+    #description a {
+        font-size: 20px;
+    }
+
+    #courses h2 {
+        width: 980px;
+        margin: 34px auto 67px auto;
+    }
+
+    #cards {
+        width: 980px;
+        margin: 0 auto 58px auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 25px 37px;
+    }
+
+    .card {
+        width: 300px;
+        height: 414px;
+        position: relative;
+    }
+
+    .card img {
+        height: 150px;
+        margin-bottom: 34px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        margin: 0 22px 25px 22px;
+        line-height: 1.6em;
+    }
+
+    .card p {
+        margin: 0 22px;
+    }
+
+    .details {
+        font-size: 16px;
+        margin: 0 22px 21px 22px;
+        position: absolute;
+        bottom: 0;
     }
 }
