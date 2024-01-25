@@ -1,5 +1,9 @@
+const body = document.querySelector('body')
 const main = document.querySelector('main')
 const header = document.querySelector('header')
+const menuButton = document.querySelector('.menu-btn')
+const menuContainer = document.querySelector('#menu-container')
+const backdrop = document.querySelector('.backdrop')
 
 // scale to fit screen
 let ratio = 1
@@ -51,3 +55,35 @@ setInterval(() => {
         didScroll = false
     }
 }, 250)
+
+// menu
+const openMenu = () => {
+    menuButton.onclick = closeMenu
+    body.classList.add('menu-open')
+    menuButton.classList.add('x')
+    menuContainer.classList.add('displayed')
+    setTimeout(() => {
+        menuContainer.classList.add('expanded')
+    }, 1)
+}
+
+const closeMenu = () => {
+    menuButton.onclick = openMenu
+    menuButton.classList.remove('x')
+    menuContainer.classList.remove('expanded')
+    setTimeout(() => {
+        if(!menuContainer.classList.contains('expanded'))
+        menuContainer.classList.remove('displayed')
+        body.classList.remove('menu-open')
+    }, 500)
+}
+
+menuButton.onclick = openMenu
+backdrop.onclick = e => {
+    if(e.target != backdrop) return
+    menuButton.classList.remove('x')
+    menuContainer.classList.remove('expanded')
+    menuContainer.classList.remove('displayed')
+    body.classList.remove('menu-open')
+    menuButton.onclick = openMenu
+}

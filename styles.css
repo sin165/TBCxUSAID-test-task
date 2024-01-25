@@ -33,6 +33,10 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow-y: hidden;
+}
+
 header {
     background-color: #1a1e1f;
     height: 69px;
@@ -46,6 +50,151 @@ header {
 
 header.transparent {
     background-color: #222222f2;
+}
+
+header > div {
+    width: 280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 130px;
+    height: 29px;
+    margin: 19px 0 21px 0;
+}
+
+.logo img {
+    width: 100%;
+}
+
+nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.5s;
+}
+
+nav a.current,
+nav a:hover {
+    color: #00a3e0;
+}
+
+.menu-btn {
+    width: 26px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.menu-btn div {
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: #dbdbdb;
+    transition: 0.5s;
+    z-index: 50;
+}
+
+.menu.x div {
+    background-color: #767676;
+}
+
+.menu-one {
+    width: 13px;
+}
+
+.menu-two {
+    width: 26px;
+}
+
+.menu-three {
+    width: 13px;
+    align-self: flex-end;
+}
+
+.x .menu-one {
+    transform-origin: right;
+    transform: translate(-9px, 0) rotate(-0.375turn);
+}
+
+.x .menu-two {
+    transform-origin: center;
+    transform: rotate(-0.125turn);
+}
+
+.x .menu-three {
+    transform-origin: left;
+    transform: translate(9px, 0) rotate(-0.375turn);
+}
+
+#menu-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+}
+
+#menu-container.displayed {
+    display: block;
+}
+
+.backdrop {
+    opacity: 0;
+    background-color: #1616169e;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    transition: opacity 0.5s;
+}
+
+.expanded .backdrop {
+    opacity: 1;
+}
+
+.menu {
+    width: 200px;
+    height: 100vh;
+    background-color: #222222;
+    position: relative;
+    left: 320px;
+    transition: 0.5s;
+    padding-top: 80px;
+    z-index: 50;
+}
+
+.expanded .menu {
+    left: 120px;
+}
+
+.menu nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu nav a {
+    line-height: 52px;
+    padding-right: 16px;
+}
+
+nav.desktop {
+    display: none;
+    gap: 20px;
+}
+
+nav.desktop a {
+    padding: 0 15px;
 }
 
 main {
@@ -193,9 +342,35 @@ main {
         width: 100%;
     }
 
+    body.menu-open {
+        overflow-y: scroll;
+    }
+
     header {
         width: 100%;
         height: 84px;
+    }
+
+    header > div {
+        width: 980px;
+    }
+
+    .logo {
+        width: 182px;
+        height: 40px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #menu-container,
+    #menu-container.displayed {
+        display: none;
+    }
+
+    nav.desktop {
+        display: flex;
     }
 
     main {
