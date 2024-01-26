@@ -326,6 +326,127 @@ main {
     color: #0080b0;
 }
 
+#partners {
+    background-color: #2b2b2b;
+    position: relative;
+}
+
+#partners h3 {
+    margin: 20px 20px 11px 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.slider {
+    height: 371px;
+    width: 320px;
+    overflow: hidden;
+}
+
+.slides-container {
+    width: fit-content;
+    display: flex;
+}
+
+.slides-container.left {
+    transform: translate(-320px);
+}
+
+.slides-container.sliding-left {
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-320px);
+}
+
+.slides-container.sliding-right {
+    transition: transform 0.5s ease-in-out;
+    transform: translate(0);
+}
+
+.slide {
+    display: none;
+    height: 371px;
+    width: 320px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide.right,
+.slide.left {
+    display: flex;
+}
+
+.slide img {
+    display: block;
+}
+
+#usaid {
+    width: 219px;
+    margin: 40px 0 45px 0;
+}
+
+#spaceint {
+    width: 200px;
+    margin-bottom: 42px;
+}
+
+#tnet {
+    width: 250px;
+}
+
+#tegeta {
+    width: 180px;
+    margin: 64px 0 41px 0;
+}
+
+#spectre {
+    width: 131px;
+    margin-bottom: 42px;
+}
+
+#tbcleasing {
+    width: 220px;
+}
+
+#ufc {
+    width: 232px;
+    margin-top: 123px;
+}
+
+.slide-btns {
+    display: flex;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.slide-btn {
+    width: 6px;
+    height: 6px;
+    margin: 0 7.5px;
+    border-radius: 50%;
+    background-color: #e8e6e6;
+    cursor: pointer;
+}
+
+.slide-btn.active {
+    background-color: #ffffff;
+    background-color: green;
+}
+
+.slider-arrows {
+    display: none;
+}
+
+#faq {
+    background-color: #161616;
+    height: 100px;
+}
+
 @media only screen and (max-width: 1079px) {
     body {
         -ms-overflow-style: none;
@@ -459,5 +580,101 @@ main {
         margin: 0 22px 21px 22px;
         position: absolute;
         bottom: 0;
+    }
+
+    #partners h3 {
+        width: 980px;
+        margin: 34px auto 31px auto;
+        font-size: 24px;
+    }
+
+    .slider {
+        width: 100%;
+        height: 224px;
+        margin-bottom: 36px;
+    }
+
+    .slides-container {
+        width: 980px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .slide {
+        position: absolute;
+        width: 980px;
+        height: 224px;
+        flex-direction: row;
+        justify-content: space-between;
+        transition: 1s;
+    }
+
+    .slide.fade {
+        display: flex;
+        opacity: 0;
+    }
+
+    #usaid {
+        width: 246px;
+        margin: 0;
+    }
+
+    #spaceint {
+        width: 241px;
+        margin: 0;
+    }
+
+    #tnet {
+        width: 250px;
+    }
+
+    #tegeta {
+        width: 248px;
+        margin: 0 64px 0 0;
+    }
+
+    #spectre {
+        width: 187px;
+        margin: 0;
+    }
+
+    #tbcleasing {
+        width: 312px;
+    }
+
+    #ufc {
+        width: 227px;
+        margin: 0 auto;
+    }
+
+    .slide-btns {
+        bottom: 36px;
+    }
+
+    .slide-btn {
+        margin: 0 6px;
+    }
+
+    .slider-arrows {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: 155.4px;
+        justify-content: space-between;
+    }
+
+    .slider-arrow {
+        width: 18px;
+        color: #f4f4f4;
+        margin: 0 100px;
+        cursor: pointer;
+    }
+
+    .slider-arrow.right {
+        transform: rotate(0.5turn);
+    }
+
+    .slider-arrow:hover {
+        color: #767676;
     }
 }
