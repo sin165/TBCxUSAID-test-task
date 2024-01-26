@@ -66,7 +66,7 @@ const openMenu = () => {
     menuContainer.classList.add('displayed')
     setTimeout(() => {
         menuContainer.classList.add('expanded')
-    }, 1)
+    }, 10)
 }
 
 const closeMenu = () => {
@@ -128,7 +128,7 @@ const slideRight = targetIndex => {
     slidesContainer.classList.add('left')
     setTimeout(() => {
         slidesContainer.classList.add('sliding-right')
-    }, 1)
+    }, 10)
     setTimeout(() => {
         slidesContainer.classList.remove('left', 'sliding-right')
         slides[activeSlideIndex].classList.remove('active')
@@ -149,7 +149,7 @@ const changeSlide = targetIndex => {
     setTimeout(() => {
         slides[targetIndex].classList.add('active')
         slides[targetIndex].classList.remove('fade')
-    }, 1)
+    }, 10)
     setTimeout(() => {
         slides[activeSlideIndex].classList.remove('active', 'fade')
         activeSlideIndex = targetIndex
@@ -182,16 +182,29 @@ rightArrow.onclick = () => {
     changeSlide(targetIndex)
 }
 
+const slideFromLastToFirst = () => {
+    let firstSlide = document.querySelector('.slide.first')
+    slidesContainer.appendChild(firstSlide)
+    slideLeft(0)
+    setTimeout(() => {
+        slidesContainer.insertBefore(firstSlide, slidesContainer.firstElementChild)
+    }, 500)
+}
+
+const slideFromFirstToLast = () => {
+    let firstSlide = document.querySelector('.slide.first')
+    slidesContainer.appendChild(firstSlide)
+    slideRight(2)
+    setTimeout(() => {
+        slidesContainer.insertBefore(firstSlide, slidesContainer.firstElementChild)
+    }, 500)
+}
+
 const automaticSlide = () => {
     let targetIndex = activeSlideIndex === 2 ? 0 : activeSlideIndex + 1
     if(window.innerWidth < 1080) {
         if(targetIndex === 0) {
-            let firstSlide = document.querySelector('.slide.first')
-            slidesContainer.appendChild(firstSlide)
-            slideLeft(targetIndex)
-            setTimeout(() => {
-                slidesContainer.insertBefore(firstSlide, slidesContainer.firstElementChild)
-            }, 500)
+            slideFromLastToFirst()
         } else {
             slideLeft(targetIndex)
         }
@@ -209,3 +222,41 @@ slider.onmouseover = () => {
 slider.onmouseleave = () => {
     sliderInterval = setInterval(automaticSlide, 3000)
 }
+
+let swipeStartX
+let swipeInProgress = false
+
+slider.addEventListener('touchstart', e => {
+    swipeStartX = e.touches[0].clientX
+})
+
+slider.addEventListener('touchmove', e => {
+    if(swipeInProgress) return
+    let currentX = e.touches[0].clientX;
+    let deltaX = currentX - swipeStartX;
+    if (deltaX < 0) {
+        if(-deltaX > 50) {
+            swipeInProgress = true
+            let targetIndex = activeSlideIndex === 2 ? 0 : activeSlideIndex + 1
+            if(targetIndex > 0) {
+                slideLeft(targetIndex)
+            } else {
+                slideFromLastToFirst()
+            }
+        }
+    } else {
+        if(deltaX > 50) {
+            swipeInProgress = true
+            let targetIndex = activeSlideIndex > 0 ? activeSlideIndex - 1 : 2
+            if(targetIndex === 2) {
+                slideFromFirstToLast()
+            } else {
+                slideRight(targetIndex)
+            }
+        }
+    }
+})
+
+slider.addEventListener('touchend', () => {
+    swipeInProgress = false
+})
