@@ -260,3 +260,20 @@ slider.addEventListener('touchmove', e => {
 slider.addEventListener('touchend', () => {
     swipeInProgress = false
 })
+
+
+// expand faq questions
+const questions = document.querySelectorAll('.question')
+const questionTexts = document.querySelectorAll('.question-text')
+questionTexts.forEach(questionText => {
+    questionText.onclick = () => {
+        if(questionText.parentElement.classList.contains('expanded')) {
+            questionText.parentElement.classList.remove('expanded')
+        } else {
+            questions.forEach(question => {
+                question.classList.remove('expanded')
+            })
+            questionText.parentElement.classList.add('expanded')
+        }
+    }
+})
