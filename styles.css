@@ -545,6 +545,12 @@ footer .contact {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+footer .contact:hover {
+    background-color: #d5d5d5;
+    color: #353131;
 }
 
 footer .social {
@@ -569,6 +575,11 @@ footer .text a {
     text-decoration: none;
     font-size: 14px;
     color: #f4f4f4;
+    transition: color 0.5s;
+}
+
+footer .text a:hover {
+    color: #aaaaaa;
 }
 
 @media only screen and (max-width: 1079px) {
