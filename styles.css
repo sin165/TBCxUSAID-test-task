@@ -512,6 +512,62 @@ main {
     justify-content: center;
 }
 
+footer {
+    background-color: #1a1e1f;
+    padding: 32px 37px 44px 37px;
+}
+
+footer img.logo {
+    display: block;
+    width: 104px;
+    height: 30px;
+    margin: 0 0 33px 0;
+}
+
+footer .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 39px;
+}
+
+footer .contact {
+    display: block;
+    width: 109px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: #00aef3;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+footer .social img {
+    display: block;
+    width: 35px;
+    
+}
+
+footer .text p {
+    font-size: 14px;
+    margin: 21px 0 0 0;
+}
+
+footer .text a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #f4f4f4;
+}
+
 @media only screen and (max-width: 1079px) {
     body {
         -ms-overflow-style: none;
@@ -770,5 +826,51 @@ main {
 
     .all-questions .learn-more {
         font-size: 20px;
+    }
+
+    footer {
+        padding: 64px 0 43px 0;
+    }
+
+    footer > div {
+        width: 980px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    footer .contact {
+        width: 162px;
+        height: 39px;
+        font-size: 16px;
+    }
+
+    footer .buttons {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 43px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    footer .social {
+        width: 88px;
+        gap: 10px;
+    }
+
+    footer .social img {
+        width: 39px;
+    }
+
+    footer .text {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 56px;
+        width: 50%;
+    }
+
+    footer .text p {
+        margin: 0;
     }
 }
