@@ -197,8 +197,11 @@ nav.desktop a {
     padding: 0 15px;
 }
 
-main {
+#main {
     transform-origin: top left;
+}
+
+main {
     padding-top: 69px;
 }
 
