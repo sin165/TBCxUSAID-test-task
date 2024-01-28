@@ -305,6 +305,7 @@ main {
 .details {
     color: #00aeef;
     font-size: 14px;
+    font-weight: 500;
     margin: 0 18px 20px 18px;
     padding: 12px 0;
 }
@@ -436,7 +437,6 @@ main {
 
 .slide-btn.active {
     background-color: #ffffff;
-    background-color: green;
 }
 
 .slider-arrows {
